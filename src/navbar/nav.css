@@ -1,0 +1,85 @@
+/* Default styles for the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #39605b;
+}
+
+.navbar-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin: 0 1rem;
+}
+
+.navbar-menu a {
+  color: #b80606;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: ease-in-out 0.5s;
+}
+.navbar-menu a:hover {
+  color: #d4aaaa;
+  border-bottom: #f3f7f7 3px solid;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+/* Styles for small screens */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #eee;
+    padding: 1rem;
+  }
+
+  .navbar-menu ul {
+    flex-direction: column;
+  }
+
+  .navbar-menu li {
+    margin: 0.5rem 0;
+  }
+
+  .navbar-toggle {
+    display: block;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .navbar-toggle-icon {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    background: red;
+    /* url("toggle-icon.png"); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  /* Hide the navbar toggle icon when the navbar menu is visible */
+  .navbar-toggle.active .navbar-toggle-icon {
+    display: none;
+  }
+
+  /* Show the navbar menu when the toggle button is clicked */
+  .navbar-toggle.active + .navbar-menu {
+    display: block;
+  }
+}
